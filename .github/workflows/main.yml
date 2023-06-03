@@ -12,11 +12,22 @@ jobs:
     - name: Setup Go environment
       uses: actions/setup-go@v4.0.1
       with:
-        # The Go version to download (if necessary) and use. Supports semver spec and ranges.
         go-version: 1.19
-    - name: install packwiz
+    - name: Install packwiz
       run: go install github.com/packwiz/packwiz@latest
-    - name: compile for modrinth
+    - name: Update mods to latest
+      run: packwiz update --all -y
+    - name: Compile for Modrinth
       run: packwiz mr export
-    - name: compile for curseforge
+    - name: Compile for CurseForge
       run: packwiz cf export
+    - name: Modrinth file
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        name: Redstoners.mrpack
+        path: ./Redstoners-1.0.0.mrpack
+    - name: CurseForge file
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        name: Redstoners.zip
+        path: ./Redstoners-1.0.0.zip
