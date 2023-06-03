@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+    - main
+jobs:
+  compile:
+    name: compile using packwiz
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup Go environment
+      uses: actions/setup-go@v4.0.1
+      with:
+        # The Go version to download (if necessary) and use. Supports semver spec and ranges.
+        go-version: 1.19
+    - name: install packwiz
+      run: go install github.com/packwiz/packwiz@latest
+    - name: compile for modrinth
+      run: packwiz mr export
+    - name: compile for curseforge
+      run: packwiz cf export
