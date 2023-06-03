@@ -22,12 +22,12 @@ jobs:
         packwiz mr export
         packwiz cf export
     - name: Upload Modrinth Build
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3.1.2
       with:
         name: Redstoners-modrinth
         path: Redstoners-1.0.0.mrpack
     - name: Upload CurseForge Build
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3.1.2
       with:
         name: Redstoners-curseforge
         path: Redstoners-1.0.0.zip
