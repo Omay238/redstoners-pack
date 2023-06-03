@@ -24,10 +24,10 @@ jobs:
     - name: Upload Modrinth Build
       uses: actions/upload-artifact@v3.1.2
       with:
-        name: Redstoners-modrinth
+        name: Redstoners.mrpack
         path: Redstoners-1.0.0.mrpack
     - name: Upload CurseForge Build
       uses: actions/upload-artifact@v3.1.2
       with:
-        name: Redstoners-curseforge
+        name: Redstoners.zip
         path: Redstoners-1.0.0.zip
