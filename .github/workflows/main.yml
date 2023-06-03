@@ -4,7 +4,7 @@ on:
     - main
 jobs:
   compile:
-    name: compile using packwiz
+    name: Compile using packwiz
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -17,17 +17,17 @@ jobs:
       run: go install github.com/packwiz/packwiz@latest
     - name: Update mods to latest
       run: packwiz update --all -y
-    - name: Compile for Modrinth
-      run: packwiz mr export
-    - name: Compile for CurseForge
-      run: packwiz cf export
-    - name: Modrinth file
-      uses: actions/upload-artifact@v3.1.2
+    - name: Compile packs
+      run: |
+        packwiz mr export
+        packwiz cf export
+    - name: Upload Modrinth Build
+      uses: actions/upload-artifact@v2
       with:
-        name: Redstoners.mrpack
-        path: ./Redstoners-1.0.0.mrpack
-    - name: CurseForge file
-      uses: actions/upload-artifact@v3.1.2
+        name: Redstoners-modrinth
+        path: Redstoners-1.0.0.mrpack
+    - name: Upload CurseForge Build
+      uses: actions/upload-artifact@v2
       with:
-        name: Redstoners.zip
-        path: ./Redstoners-1.0.0.zip
+        name: Redstoners-curseforge
+        path: Redstoners-1.0.0.zip
