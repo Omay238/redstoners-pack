@@ -1,0 +1,7 @@
+name = "MattPack"
+filename = "MattPack 1.18 -trapdoor lamp.zip"
+
+[download]
+url = "https://github.com/Xyverle/MattPack/raw/Main/MattPack%201.18%20-trapdoor%20lamp.zip"
+hash-format = "sha256"
+hash = "90b3061accdab6258bb1f26dc5c0b394199fe6ae8bd581b92fa6301ade0a8dcb"

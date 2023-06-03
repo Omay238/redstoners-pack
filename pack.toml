@@ -1,0 +1,13 @@
+name = "Redstoners"
+author = "Omay"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "1bbe40150064a3ed5d0557434cb4290fef3c985c955865ca5d570effdf7c3f53"
+
+[versions]
+fabric = "0.14.21"
+minecraft = "1.18.2"
